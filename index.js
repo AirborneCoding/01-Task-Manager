@@ -27,7 +27,7 @@ app.set('trust proxy', 1);
 // morgan , express.json, static folder
 app.use(express.static(path.resolve(__dirname,"./public/dist")))
 app.use(express.json())
-app.use(morgan("tiny"))
+// app.use(morgan("tiny"))
 
 // use routes
 app.use("/api/v1/tasks", taskRouter)
