@@ -43,7 +43,7 @@ const createTask = async (req, res) => {
 ------------------------------------------------*/
 
 const getAllTasks = async (req, res) => {
- const tasks = await Task.find()
+ const tasks = await Task.find().sort("-createdAt")
 
  moment.locale('ar-ma');
  const formattedTasks = tasks.map(task => {
