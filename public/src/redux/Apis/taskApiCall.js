@@ -92,7 +92,7 @@ export function getTasksCount() {
     try {
       const response = await axios.get(`/api/v1/tasks/count`);
       dispatch(setnbrOfTasks(response.data.tasks))
-      
+
     } catch (error) {
       console.log(error.response.data.message);
     }

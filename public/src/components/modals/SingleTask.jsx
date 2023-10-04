@@ -4,6 +4,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSingleTask, updateTask } from '../../redux/Apis/taskApiCall';
 
+
+
 // local states
 import useLocalState from '../../utils/localState';
 
@@ -104,3 +106,6 @@ const SingleTask = ({ taskId, isOpen, onClose }) => {
 };
 
 export default SingleTask;
+
+
+
