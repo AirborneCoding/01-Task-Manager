@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+
 import {
     useFetchTasksQuery,
 } from '../../redux/services/taskServices';
@@ -67,7 +70,7 @@ const TaskList = () => {
                             key={item._id}
                             className="bg-white shadow-md p-4 rounded-lg cursor-pointer hover:shadow-2xl"
                         >
-                            <h3 className="text-lg font-semibold">{title}</h3>
+                            <h3 className="text-lg font-semibold">{title || <Skeleton /> }</h3>
                             <p className="text-gray-600">{description}</p>
                             <p className={`mt-2 ${completed ? 'text-green-600' : 'text-red-600'}`}>
                                 {completed ? 'Completed' : 'Not Completed'}

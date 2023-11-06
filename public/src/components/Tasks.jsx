@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import SingleTask from "./modals/SingleTask";
 import Delete from "./modals/Delete";
 
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+
 // redux toolkit
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllTasks } from "../redux/Apis/taskApiCall";
@@ -69,7 +72,7 @@ const Tasks = () => {
                   key={item._id}
                   className="bg-white shadow-md p-4 rounded-lg cursor-pointer hover:shadow-2xl"
                 >
-                  <h3 className="text-lg font-semibold">{title}</h3>
+                  <h3 className="text-lg font-semibold">{title || <Skeleton count={1} width="150px" />}</h3>
                   <p className="text-gray-600">{description}</p>
                   <p className={`mt-2 ${completed ? 'text-green-600' : 'text-red-600'}`}>
                     {completed ? 'Completed' : 'Not Completed'}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // components
 import Form from "./components/Form";
@@ -12,6 +12,8 @@ const Home = () => {
 
     // sorting 
     const { title, completed, setCompleted, setTitle } = useLocalState();
+
+
 
     return <main className="body-container">
         <h2 className="text-center mt-16 uppercase underline font-bold text-2xl italic">Task Manager (redux-tookit) </h2>
